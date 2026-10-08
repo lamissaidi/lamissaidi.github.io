@@ -112,12 +112,14 @@ section.sec{padding-block:96px;position:relative}
 
 /* ---------- overview cards (tilt) ---------- */
 .services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:64px;perspective:1000px}
-.svc{background:var(--green-pink);padding:1px;border-radius:20px;box-shadow:0 35px 120px -15px #211e35;transform-style:preserve-3d;transition:transform .15s ease-out}
-.svc-in{background:var(--tertiary);border-radius:20px;min-height:270px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px}
-.svc-ic{width:68px;height:68px;border-radius:18px;display:grid;place-items:center;background:rgba(145,94,255,.12);transform:translateZ(40px)}
-.svc-ic svg{width:38px;height:38px}
-.svc h3{font-size:19px;font-weight:700;margin:0;line-height:1.3;transform:translateZ(30px)}
-.svc p{margin:0;font-size:13.5px;color:var(--secondary);line-height:1.5}
+.svc{display:flex;background:var(--green-pink);padding:1px;border-radius:20px;box-shadow:0 35px 120px -15px #211e35;transform-style:preserve-3d;transition:transform .15s ease-out}
+.svc-in{flex:1;background:var(--tertiary);border-radius:20px;min-height:320px;padding:26px 22px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:14px}
+.svc-ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:rgba(145,94,255,.12);transform:translateZ(40px)}
+.svc-ic svg{width:30px;height:30px}
+.svc h3{font-size:18px;font-weight:700;margin:0;line-height:1.3;transform:translateZ(30px)}
+.svc p{margin:0;font-size:13.5px;color:var(--secondary);line-height:1.6}
+.svc-tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px}
+.svc-tools span{font-size:12px;font-weight:500;color:var(--white-100);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:4px 10px;border-radius:999px}
 @media (max-width:1050px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.services{grid-template-columns:1fr}}
 
@@ -144,9 +146,9 @@ section.sec{padding-block:96px;position:relative}
 .tl-card ul{margin:18px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
 .tl-card li{color:var(--white-100);font-size:14.5px;line-height:1.6;letter-spacing:.01em}
 .tl-card p.desc{color:var(--white-100);font-size:14.5px;margin:16px 0 0;line-height:1.65}
-.tags{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:16px}
-.tags span{font-size:13px;font-weight:500}
-.t-blue{color:#56ccf2}.t-green{color:#4ade80}.t-pink{color:#f472b6}
+.stack{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.07)}
+.stack b{font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--violet);margin-right:4px}
+.stack span{font-size:12.5px;font-weight:500;color:var(--white-100);background:rgba(145,94,255,.12);border:1px solid rgba(145,94,255,.25);padding:3px 10px;border-radius:999px}
 @media (max-width:1023px){
   .tl::before{left:30px}
   .tl-item{grid-template-columns:1fr;gap:0;padding-left:88px}
@@ -174,6 +176,9 @@ section.sec{padding-block:96px;position:relative}
 .sk div{display:flex;flex-wrap:wrap;gap:8px}
 .sk span{font-size:13.5px;color:var(--white-100);background:rgba(255,255,255,.05);padding:5px 11px;border-radius:999px;transition:background .2s}
 .sk span:hover{background:rgba(145,94,255,.35)}
+.sk p.proof{margin:0 0 14px;font-size:13.5px;line-height:1.6;color:var(--secondary)}
+.sk.key{grid-column:1/-1;background:linear-gradient(135deg,rgba(145,94,255,.18),rgba(0,206,168,.08)),var(--tertiary);border-color:rgba(145,94,255,.35)}
+.sk.key span{background:rgba(145,94,255,.2);font-weight:500}
 @media (max-width:760px){.skills{grid-template-columns:1fr}}
 
 /* ---------- projects ---------- */
@@ -186,7 +191,6 @@ section.sec{padding-block:96px;position:relative}
 .proj-vis .yr{position:absolute;right:12px;top:12px;font-size:11.5px;font-weight:600;background:rgba(5,8,22,.6);padding:5px 10px;border-radius:999px}
 .proj h3{margin:20px 0 0;font-size:22px;font-weight:700;line-height:1.3}
 .proj p{margin:8px 0 0;color:var(--secondary);font-size:14.5px;line-height:1.6}
-.proj .tags{margin-top:auto;padding-top:16px}
 @media (max-width:1050px){.projects{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.projects{grid-template-columns:1fr}}
 
@@ -259,6 +263,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
     <a class="logo" href="#top"><span class="mark">LS</span>Lamis&nbsp;<small>| Test &amp; Validation</small></a>
     <ul class="main" id="menu">
       <li><a href="#about"><span data-l="fr">À propos</span><span data-l="en">About</span></a></li>
+      <li><a href="#tech"><span data-l="fr">Compétences</span><span data-l="en">Skills</span></a></li>
       <li><a href="#work"><span data-l="fr">Expérience</span><span data-l="en">Work</span></a></li>
       <li><a href="#projects"><span data-l="fr">Projets</span><span data-l="en">Projects</span></a></li>
       <li><a href="#contact">Contact</a></li>
@@ -276,6 +281,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   <div class="drawer" id="drawer" hidden>
     <ul>
       <li><a href="#about"><span data-l="fr">À propos</span><span data-l="en">About</span></a></li>
+      <li><a href="#tech"><span data-l="fr">Compétences</span><span data-l="en">Skills</span></a></li>
       <li><a href="#work"><span data-l="fr">Expérience</span><span data-l="en">Work</span></a></li>
       <li><a href="#projects"><span data-l="fr">Projets</span><span data-l="en">Projects</span></a></li>
       <li><a href="#contact">Contact</a></li>
@@ -335,16 +341,87 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       <div class="services">
         <div class="svc tilt" data-anim="right" style="--d:0s"><div class="svc-in">
           <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#bf61ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18-6-6 6-6M15 6l6 6-6 6"/></svg></div>
-          <h3>Test Automation Engineer</h3><p>Python · Robot Framework</p></div></div>
+          <h3><span data-l="fr">Automatisation des tests</span><span data-l="en">Test Automation</span></h3>
+          <p data-l="fr">Tests PBIT, CBIT et IBIT automatisés sur équipements aéronautiques, avec mes propres drivers Python pour ARINC, CAN, UART, SPI et RS-485.</p>
+          <p data-l="en">Automated PBIT, CBIT and IBIT tests on aerospace equipment, using Python drivers I wrote for ARINC, CAN, UART, SPI and RS-485.</p>
+          <div class="svc-tools"><span>Python</span><span>Robot Framework</span><span>Embedded Linux</span></div></div></div>
         <div class="svc tilt" data-anim="right" style="--d:.15s"><div class="svc-in">
-          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#00cea8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div>
-          <h3><span data-l="fr">Logiciel embarqué</span><span data-l="en">Embedded Software</span></h3><p>C++ · Qt · Embedded Linux</p></div></div>
-        <div class="svc tilt" data-anim="right" style="--d:.3s"><div class="svc-in">
           <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#56ccf2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l3-8 4 16 3-8h5"/></svg></div>
-          <h3>Test &amp; Validation</h3><p><span data-l="fr">HIL · CAN · ARINC · Bancs de test</span><span data-l="en">HIL · CAN · ARINC · Test benches</span></p></div></div>
+          <h3><span data-l="fr">Validation automobile HIL</span><span data-l="en">Automotive HIL Validation</span></h3>
+          <p data-l="fr">14 mois de validation A-IVI pour Renault&nbsp;: CarPlay, Android Auto, ADAS, campagnes de régression, de performance et de stress, analyse audio à chaque sprint.</p>
+          <p data-l="en">14 months validating Renault A-IVI systems: CarPlay, Android Auto, ADAS, regression, performance and stress campaigns, audio analysis every sprint.</p>
+          <div class="svc-tools"><span>Vector CANalyzer</span><span>CAPL</span><span>CAN</span><span>R&amp;S® UPP</span></div></div></div>
+        <div class="svc tilt" data-anim="right" style="--d:.3s"><div class="svc-in">
+          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#00cea8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div>
+          <h3><span data-l="fr">Bancs de test &amp; instrumentation</span><span data-l="en">Test Benches &amp; Instrumentation</span></h3>
+          <p data-l="fr">Application C++/Qt qui pilote un banc avec plus de 15 ATP intégrées&nbsp;; les rapports d'acceptation (ATR) sont générés automatiquement en Python.</p>
+          <p data-l="en">C++/Qt application driving a test bench with 15+ integrated ATPs; acceptance reports (ATR) are generated automatically in Python.</p>
+          <div class="svc-tools"><span>C++</span><span>Qt</span><span>Python</span><span>NI-9474</span></div></div></div>
         <div class="svc tilt" data-anim="right" style="--d:.45s"><div class="svc-in">
           <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3>QA · ISTQB</h3><p><span data-l="fr">Exigences · Couverture · Anomalies</span><span data-l="en">Requirements · Coverage · Defects</span></p></div></div>
+          <h3><span data-l="fr">Qualité · ISTQB CTFL v4.0</span><span data-l="en">Quality · ISTQB CTFL v4.0</span></h3>
+          <p data-l="fr">Revue des exigences (SRD) et de la couverture, analyse des causes racines, 10 à 15 tickets Jira par mois, coordination et formation de l'équipe validation audio.</p>
+          <p data-l="en">Requirements (SRD) and coverage review, root-cause analysis, 10–15 Jira tickets a month, coordinating and training the audio validation team.</p>
+          <div class="svc-tools"><span>Jira · SQL</span><span>CodeBeamer</span><span>Silk Central</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH -->
+  <section class="sec" id="tech">
+    <div class="wrap">
+      <div data-anim="up" style="text-align:center">
+        <p class="sec-sub"><span data-l="fr">Ce que j'apporte à une équipe</span><span data-l="en">What I bring to a team</span></p>
+        <h2 class="sec-h"><span data-l="fr">Compétences.</span><span data-l="en">Skills.</span></h2>
+        <p class="lead" style="margin-inline:auto"><span data-l="fr">Des compétences utilisées en production, dans l'aéronautique et l'automobile, pas seulement apprises.</span><span data-l="en">Skills used on real projects in aerospace and automotive, not just learned.</span></p>
+      </div>
+      <div class="tech">
+        <div class="orb" data-anim="zoom" style="--t:4.6s;--dl:-.3s">Python</div>
+        <div class="orb" data-anim="zoom" style="--t:5.2s;--dl:-1.1s;--d:.05s">Robot<br>Framework</div>
+        <div class="orb" data-anim="zoom" style="--t:4.9s;--dl:-2s;--d:.1s">C++<small>Qt</small></div>
+        <div class="orb" data-anim="zoom" style="--t:5.6s;--dl:-.7s;--d:.15s">CANalyzer<small>Vector</small></div>
+        <div class="orb" data-anim="zoom" style="--t:5.3s;--dl:-1.9s;--d:.18s">CAPL</div>
+        <div class="orb" data-anim="zoom" style="--t:4.5s;--dl:-.5s;--d:.2s">ISTQB<small>CTFL v4.0</small></div>
+        <div class="orb" data-anim="zoom" style="--t:4.4s;--dl:-1.6s;--d:.2s">Embedded<br>Linux</div>
+        <div class="orb" data-anim="zoom" style="--t:5s;--dl:-2.4s;--d:.25s">CAN<small>ARINC</small></div>
+        <div class="orb" data-anim="zoom" style="--t:5.4s;--dl:-.2s;--d:.3s">Jira<small>SQL</small></div>
+        <div class="orb" data-anim="zoom" style="--t:4.7s;--dl:-1.3s;--d:.35s">LabVIEW</div>
+        <div class="orb" data-anim="zoom" style="--t:5.1s;--dl:-2.7s;--d:.4s">STM32</div>
+        <div class="orb" data-anim="zoom" style="--t:4.8s;--dl:-.9s;--d:.45s">VHDL<small>FPGA</small></div>
+      </div>
+      <div class="skills">
+        <div class="sk key" data-anim="up"><h4><span data-l="fr">Automatisation des tests</span><span data-l="en">Test automation</span></h4>
+          <p class="proof" data-l="fr">Tests PBIT/CBIT/IBIT aéronautiques en Robot Framework, campagnes HIL Renault sous CANalyzer, générateur de scénarios de test en Python.</p>
+          <p class="proof" data-l="en">Aerospace PBIT/CBIT/IBIT tests in Robot Framework, Renault HIL campaigns in CANalyzer, a Python test-scenario generator.</p>
+          <div><span>Robot Framework</span><span data-l="fr">Drivers Python</span><span data-l="en">Python drivers</span><span>Vector CANalyzer</span><span>CAPL</span><span>WaveForms SDK / API</span><span data-l="fr">Reporting automatisé (ATR)</span><span data-l="en">Automated reporting (ATR)</span></div></div>
+        <div class="sk key" data-anim="up"><h4><span data-l="fr">Types de tests</span><span data-l="en">Testing</span></h4>
+          <p class="proof" data-l="fr">Appliqués de l'analyse des exigences jusqu'à la clôture des anomalies, selon les pratiques ISTQB.</p>
+          <p class="proof" data-l="en">Applied from requirements review through to defect closure, following ISTQB practice.</p>
+          <div><span data-l="fr">Fonctionnel</span><span data-l="en">Functional</span><span data-l="fr">Régression</span><span data-l="en">Regression</span><span>Performance</span><span>Stress</span><span>UAT</span><span data-l="fr">Système &amp; intégration</span><span data-l="en">System &amp; integration</span><span data-l="fr">Boîte noire / blanche</span><span data-l="en">Black / white box</span><span data-l="fr">Exploratoire</span><span data-l="en">Exploratory</span><span>HIL</span></div></div>
+        <div class="sk" data-anim="left"><h4><span data-l="fr">Langages</span><span data-l="en">Languages</span></h4>
+          <p class="proof" data-l="fr">Python au quotidien depuis près de 3 ans&nbsp;; C++ pour les outils de banc de test.</p>
+          <p class="proof" data-l="en">Python daily for almost 3 years; C++ for test-bench tooling.</p>
+          <div><span>Python</span><span>C</span><span>C++</span><span>CAPL</span><span>Java</span><span>VHDL</span><span>SQL</span></div></div>
+        <div class="sk" data-anim="right"><h4><span data-l="fr">Protocoles</span><span data-l="en">Protocols</span></h4>
+          <p class="proof" data-l="fr">Drivers Python écrits pour ARINC, CAN, UART, SPI et RS-485.</p>
+          <p class="proof" data-l="en">Wrote Python drivers for ARINC, CAN, UART, SPI and RS-485.</p>
+          <div><span>CAN</span><span>ARINC</span><span>UART</span><span>SPI</span><span>I²C</span><span>RS-232 / RS-485</span><span>TCP/IP</span><span>MQTT</span></div></div>
+        <div class="sk" data-anim="left"><h4><span data-l="fr">Outils &amp; ALM</span><span data-l="en">Tools &amp; ALM</span></h4>
+          <p class="proof" data-l="fr">10 à 15 tickets Jira par mois, avec tableaux de bord SQL&nbsp;; cas de test sous CodeBeamer et Silk Central.</p>
+          <p class="proof" data-l="en">10–15 Jira tickets a month with SQL dashboards; test cases in CodeBeamer and Silk Central.</p>
+          <div><span>Jira</span><span>CodeBeamer</span><span>Silk Central</span><span>Qt Creator</span><span>Visual Studio</span><span>STM32CubeIDE</span><span>LabVIEW</span><span>Quartus</span><span>Arduino IDE</span></div></div>
+        <div class="sk" data-anim="right"><h4><span data-l="fr">Embarqué</span><span data-l="en">Embedded</span></h4>
+          <p class="proof" data-l="fr">Cibles Linux embarqué sur eMMC configurées pour les campagnes de validation.</p>
+          <p class="proof" data-l="en">Configured eMMC-based embedded Linux targets for validation campaigns.</p>
+          <div><span>Embedded Linux</span><span>eMMC</span><span>STM32</span><span>Raspberry Pi</span><span>ESP32</span><span>Arduino</span><span>NI boards</span><span>Digilent Digital Discovery</span></div></div>
+        <div class="sk" data-anim="left"><h4>Instrumentation</h4>
+          <p class="proof" data-l="fr">Pilotée par mes drivers Python sur le banc de test automatisé&nbsp;; analyse audio au R&amp;S® UPP.</p>
+          <p class="proof" data-l="en">Driven by my Python drivers on the automated test bench; audio analysis with the R&amp;S® UPP.</p>
+          <div><span>R&amp;S® UPP</span><span data-l="fr">Alimentations programmables</span><span data-l="en">Programmable power supplies</span><span data-l="fr">Multimètres</span><span data-l="en">Multimeters</span><span data-l="fr">Calibrateurs</span><span data-l="en">Calibrators</span><span data-l="fr">Relais NI-9474</span><span data-l="en">NI-9474 relays</span></div></div>
+        <div class="sk" data-anim="right"><h4><span data-l="fr">Méthodes</span><span data-l="en">Methods</span></h4>
+          <p class="proof" data-l="fr">Coordination et formation de l'équipe validation audio, représentation de la validation en réunion client.</p>
+          <p class="proof" data-l="en">Coordinated and trained the audio validation team; represented validation in client meetings.</p>
+          <div><span>Agile / Scrum</span><span data-l="fr">Analyse des exigences</span><span data-l="en">Requirements analysis</span><span data-l="fr">Couverture de test</span><span data-l="en">Test coverage</span><span data-l="fr">Analyse des causes racines</span><span data-l="en">Root-cause analysis</span><span data-l="fr">Communication client</span><span data-l="en">Client communication</span></div></div>
       </div>
     </div>
   </section>
@@ -376,7 +453,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
               <li data-l="fr">Recette (UAT) et configuration de cibles Linux embarqué sur eMMC.</li>
               <li data-l="en">User Acceptance Testing and configuration of eMMC-based embedded Linux targets.</li>
             </ul>
-            <div class="tags"><span class="t-blue">#python</span><span class="t-green">#robotframework</span><span class="t-pink">#embedded-linux</span><span class="t-blue">#arinc</span><span class="t-green">#can</span><span class="t-pink">#uart-spi</span><span class="t-blue">#rs485</span><span class="t-green">#waveforms-sdk</span></div>
+            <div class="stack"><b>Technologies</b><span>Python</span><span>Robot Framework</span><span>Embedded Linux</span><span>eMMC</span><span>SSH / Ethernet</span><span>ARINC</span><span>CAN</span><span>UART</span><span>SPI</span><span>RS-232 / RS-485</span><span>Digilent Digital Discovery</span><span>WaveForms SDK / API</span></div>
           </div>
           <div class="tl-date" data-anim="right"><span data-l="fr">Août 2026 – Aujourd'hui</span><span data-l="en">Aug 2026 – Present</span></div>
         </div>
@@ -396,7 +473,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
               <li data-l="fr">Tests d'intégration, système et d'acceptation sur le banc livré.</li>
               <li data-l="en">Integration, system and acceptance testing on the delivered bench.</li>
             </ul>
-            <div class="tags"><span class="t-blue">#cpp</span><span class="t-green">#qt</span><span class="t-pink">#python</span><span class="t-blue">#ni-9474</span><span class="t-green">#test-bench</span></div>
+            <div class="stack"><b>Technologies</b><span>C++</span><span>Qt Creator</span><span>Python</span><span>Visual Studio</span><span>NI-9474</span><span data-l="fr">Alimentations</span><span data-l="en">Power supplies</span><span data-l="fr">Multimètres</span><span data-l="en">Multimeters</span><span data-l="fr">Calibrateurs</span><span data-l="en">Calibrators</span><span data-l="fr">Relais</span><span data-l="en">Relay switches</span></div>
           </div>
           <div class="tl-date" data-anim="left"><span data-l="fr">Avr. 2026 – Aujourd'hui</span><span data-l="en">Apr 2026 – Present</span></div>
         </div>
@@ -418,7 +495,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
               <li data-l="fr">Coordination de l'équipe validation audio&nbsp;: répartition des tâches, formation des nouveaux, réunions client.</li>
               <li data-l="en">Coordinated the audio validation team: task distribution, onboarding new members, client meetings.</li>
             </ul>
-            <div class="tags"><span class="t-blue">#canalyzer</span><span class="t-green">#capl</span><span class="t-pink">#hil</span><span class="t-blue">#jira-sql</span><span class="t-green">#codebeamer</span><span class="t-pink">#rs-upp</span></div>
+            <div class="stack"><b>Technologies</b><span>Vector CANalyzer</span><span>CAPL</span><span>CAN</span><span>HIL</span><span data-l="fr">Calculateur automobile</span><span data-l="en">Automotive ECU</span><span>R&amp;S® UPP</span><span>Jira · SQL</span><span>CodeBeamer</span><span>Silk Central</span><span>Agile</span></div>
           </div>
           <div class="tl-date" data-anim="right"><span data-l="fr">Mars 2025 – Avr. 2026</span><span data-l="en">Mar 2025 – Apr 2026</span></div>
         </div>
@@ -437,7 +514,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
               <li data-l="fr">Initiative soulignée par mon manager dans sa recommandation LinkedIn.</li>
               <li data-l="en">Highlighted by my manager in a LinkedIn recommendation.</li>
             </ul>
-            <div class="tags"><span class="t-blue">#python</span><span class="t-green">#agile-scrum</span><span class="t-pink">#initiative</span></div>
+            <div class="stack"><b>Technologies</b><span>Python</span><span>Agile / Scrum</span></div>
           </div>
           <div class="tl-date" data-anim="left"><span data-l="fr">Mars 2025 – Avr. 2026</span><span data-l="en">Mar 2025 – Apr 2026</span></div>
         </div>
@@ -449,7 +526,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
             <div class="tl-org"><a class="ext" href="https://www.linkedin.com/search/results/companies/?keywords=SERMA%20International" target="_blank" rel="noopener">SERMA International<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a> · <span data-l="fr">Hybride</span><span data-l="en">Hybrid</span></div>
             <p class="desc" data-l="fr">Application Python qui sélectionne des tests automatiques, les exécute en séquence avec un nombre de répétitions configurable et exporte des rapports détaillés sans intervention humaine. Elle génère aussi de nouveaux scénarios à partir d'une base de tests unitaires, pour que des non-développeurs puissent créer et lancer des tests.</p>
             <p class="desc" data-l="en">A Python application that selects automated tests, runs them sequentially with configurable repetitions and exports detailed reports without human intervention. It also generates new scenarios from a unit-test database so non-developers can create and run tests.</p>
-            <div class="tags"><span class="t-blue">#python</span><span class="t-green">#capl</span><span class="t-pink">#automotive</span></div>
+            <div class="stack"><b>Technologies</b><span>Python</span><span>CAPL</span><span>Visual Studio Code</span></div>
           </div>
           <div class="tl-date" data-anim="right"><span data-l="fr">Févr. 2024 – Août 2024</span><span data-l="en">Feb 2024 – Aug 2024</span></div>
         </div>
@@ -461,7 +538,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
             <div class="tl-org"><a class="ext" href="https://www.linkedin.com/search/results/companies/?keywords=SERMA%20International" target="_blank" rel="noopener">SERMA International<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a> · <span data-l="fr">Sur site</span><span data-l="en">On site</span></div>
             <p class="desc" data-l="fr">Développement de librairies de pilotage d'équipements avec LabVIEW, en équipe.</p>
             <p class="desc" data-l="en">Developed equipment control libraries in LabVIEW as part of a team.</p>
-            <div class="tags"><span class="t-blue">#labview</span><span class="t-green">#teamwork</span></div>
+            <div class="stack"><b>Technologies</b><span>LabVIEW</span></div>
           </div>
           <div class="tl-date" data-anim="left"><span data-l="fr">Juil. 2023 – Août 2023</span><span data-l="en">Jul 2023 – Aug 2023</span></div>
         </div>
@@ -473,40 +550,10 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
             <div class="tl-org"><a class="ext" href="https://www.linkedin.com/search/results/companies/?keywords=ASQII" target="_blank" rel="noopener">ASQII — HealthTech<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a> · <span data-l="fr">Stage · Le Kram, Tunis</span><span data-l="en">Internship · Le Kram, Tunis</span></div>
             <p class="desc" data-l="fr">Application desktop pour la gestion de la dispensation journalière individuelle et nominative, avec base de données SQLite / MySQL.</p>
             <p class="desc" data-l="en">Desktop application for managing daily individual nominative dispensing, backed by SQLite / MySQL.</p>
-            <div class="tags"><span class="t-blue">#desktop-app</span><span class="t-green">#sqlite</span><span class="t-pink">#mysql</span></div>
+            <div class="stack"><b>Technologies</b><span>SQLite</span><span>MySQL</span></div>
           </div>
           <div class="tl-date" data-anim="right"><span data-l="fr">Août 2022 · 1 mois</span><span data-l="en">Aug 2022 · 1 month</span></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TECH -->
-  <section class="sec" id="tech">
-    <div class="wrap">
-      <div data-anim="up" style="text-align:center">
-        <p class="sec-sub"><span data-l="fr">Mes outils</span><span data-l="en">My toolbox</span></p>
-        <h2 class="sec-h"><span data-l="fr">Compétences.</span><span data-l="en">Skills.</span></h2>
-      </div>
-      <div class="tech">
-        <div class="orb" data-anim="zoom" style="--t:4.6s;--dl:-.3s">Python</div>
-        <div class="orb" data-anim="zoom" style="--t:5.2s;--dl:-1.1s;--d:.05s">Robot<br>Framework</div>
-        <div class="orb" data-anim="zoom" style="--t:4.9s;--dl:-2s;--d:.1s">C++<small>Qt</small></div>
-        <div class="orb" data-anim="zoom" style="--t:5.6s;--dl:-.7s;--d:.15s">CAPL<small>CANalyzer</small></div>
-        <div class="orb" data-anim="zoom" style="--t:4.4s;--dl:-1.6s;--d:.2s">Embedded<br>Linux</div>
-        <div class="orb" data-anim="zoom" style="--t:5s;--dl:-2.4s;--d:.25s">CAN<small>ARINC</small></div>
-        <div class="orb" data-anim="zoom" style="--t:5.4s;--dl:-.2s;--d:.3s">Jira<small>SQL</small></div>
-        <div class="orb" data-anim="zoom" style="--t:4.7s;--dl:-1.3s;--d:.35s">LabVIEW</div>
-        <div class="orb" data-anim="zoom" style="--t:5.1s;--dl:-2.7s;--d:.4s">STM32</div>
-        <div class="orb" data-anim="zoom" style="--t:4.8s;--dl:-.9s;--d:.45s">VHDL<small>FPGA</small></div>
-      </div>
-      <div class="skills">
-        <div class="sk" data-anim="left"><h4><span data-l="fr">Langages</span><span data-l="en">Languages</span></h4><div><span>Python</span><span>C</span><span>C++</span><span>CAPL</span><span>Java</span><span>VHDL</span><span>SQL</span></div></div>
-        <div class="sk" data-anim="right"><h4><span data-l="fr">Types de tests</span><span data-l="en">Testing</span></h4><div><span data-l="fr">Fonctionnel</span><span data-l="en">Functional</span><span data-l="fr">Régression</span><span data-l="en">Regression</span><span>Performance</span><span>Stress</span><span>UAT</span><span data-l="fr">Système &amp; intégration</span><span data-l="en">System &amp; integration</span><span data-l="fr">Boîte noire / blanche</span><span data-l="en">Black / white box</span><span data-l="fr">Exploratoire</span><span data-l="en">Exploratory</span><span>HIL</span></div></div>
-        <div class="sk" data-anim="left"><h4><span data-l="fr">Outils &amp; ALM</span><span data-l="en">Tools &amp; ALM</span></h4><div><span>Jira</span><span>CodeBeamer</span><span>Silk Central</span><span>Qt Creator</span><span>Visual Studio</span><span>STM32CubeIDE</span><span>LabVIEW</span><span>Quartus</span><span>Arduino IDE</span></div></div>
-        <div class="sk" data-anim="right"><h4><span data-l="fr">Protocoles</span><span data-l="en">Protocols</span></h4><div><span>CAN</span><span>ARINC</span><span>UART</span><span>SPI</span><span>I²C</span><span>RS-232 / RS-485</span><span>TCP/IP</span><span>MQTT</span></div></div>
-        <div class="sk" data-anim="left"><h4><span data-l="fr">Embarqué</span><span data-l="en">Embedded</span></h4><div><span>Embedded Linux</span><span>eMMC</span><span>STM32</span><span>Raspberry Pi</span><span>ESP32</span><span>Arduino</span><span>NI boards</span><span>Digilent Digital Discovery</span></div></div>
-        <div class="sk" data-anim="right"><h4>Instrumentation</h4><div><span>R&amp;S® UPP</span><span data-l="fr">Alimentations programmables</span><span data-l="en">Programmable power supplies</span><span data-l="fr">Multimètres</span><span data-l="en">Multimeters</span><span data-l="fr">Calibrateurs</span><span data-l="en">Calibrators</span><span data-l="fr">Relais</span><span data-l="en">Relay switching</span></div></div>
       </div>
     </div>
   </section>
@@ -528,35 +575,30 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
           <h3><span data-l="fr">Générateur de scénarios de test</span><span data-l="en">Test Scenario Generator</span></h3>
           <p data-l="fr">Génère des scénarios à partir d'une base de tests unitaires, les exécute en boucle et exporte les rapports automatiquement.</p>
           <p data-l="en">Builds scenarios from a unit-test database, runs them in loops and exports reports automatically.</p>
-          <div class="tags"><span class="t-blue">#python</span><span class="t-green">#capl</span><span class="t-pink">#automotive</span></div>
         </article>
         <article class="proj tilt" data-anim="up" style="--d:.12s">
           <div class="proj-vis pv2"><span class="yr">2026</span><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 10h2l1.5-3 3 6L15 10h2"/></svg></div>
           <h3><span data-l="fr">Banc de test &amp; génération d'ATR</span><span data-l="en">Test Bench &amp; ATR Generation</span></h3>
           <p data-l="fr">Interface C++/Qt qui orchestre plus de 15 ATP et pilote l'instrumentation, avec rapports d'acceptation générés en Python.</p>
           <p data-l="en">C++/Qt interface orchestrating 15+ ATPs and driving instruments, with acceptance reports generated in Python.</p>
-          <div class="tags"><span class="t-blue">#cpp-qt</span><span class="t-green">#python</span><span class="t-pink">#ni-9474</span></div>
         </article>
         <article class="proj tilt" data-anim="up" style="--d:.24s">
           <div class="proj-vis pv3"><span class="yr">2026</span><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V7l4 4 4-4 4 4 4-4v10"/><path d="M4 21h16"/></svg></div>
           <h3><span data-l="fr">Tests automatisés aéronautiques</span><span data-l="en">Aerospace Test Automation</span></h3>
           <p data-l="fr">Tests PBIT / CBIT / IBIT en Robot Framework avec drivers Python pour ARINC, CAN, UART, SPI et RS-485 sur Linux embarqué.</p>
           <p data-l="en">PBIT / CBIT / IBIT tests in Robot Framework with Python drivers for ARINC, CAN, UART, SPI and RS-485 on embedded Linux.</p>
-          <div class="tags"><span class="t-blue">#robotframework</span><span class="t-green">#python</span><span class="t-pink">#arinc</span></div>
         </article>
         <article class="proj tilt" data-anim="up" style="--d:0s">
           <div class="proj-vis pv4"><span class="yr">2022</span><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 8v6M9 11h6"/></svg></div>
           <h3>DJIN</h3>
           <p data-l="fr">Application desktop de gestion de la dispensation journalière individuelle et nominative (HealthTech).</p>
           <p data-l="en">Desktop application for daily individual nominative dispensing (HealthTech).</p>
-          <div class="tags"><span class="t-blue">#desktop</span><span class="t-green">#sqlite</span><span class="t-pink">#mysql</span></div>
         </article>
         <article class="proj tilt" data-anim="up" style="--d:.12s">
           <div class="proj-vis pv5"><span class="yr">2023</span><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16M8 2v3M11 2v3M14 2v3"/></svg></div>
           <h3><span data-l="fr">Cafetière automatique en VHDL</span><span data-l="en">VHDL Coffee Machine Controller</span></h3>
           <p data-l="fr">Système de contrôle personnalisable en quatre blocs&nbsp;: sélection, contrôle des ingrédients, gestion des stocks, préparation.</p>
           <p data-l="en">Customisable control system in four blocks: selection, ingredient control, stock management, brewing.</p>
-          <div class="tags"><span class="t-blue">#vhdl</span><span class="t-green">#fpga</span><span class="t-pink">#quartus</span></div>
         </article>
         <article class="proj tilt" data-anim="up" style="--d:.24s">
           <div class="proj-vis pv6"><span class="yr">2022–23</span><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="6" width="10" height="12" rx="3"/><path d="M9 6V3h6v3M9 18v3h6v-3M10 12h1l1-2 1 4 1-2h1"/></svg></div>
@@ -564,7 +606,6 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
           <p data-l="fr">Projet IoT de surveillance des personnes âgées atteintes d'Alzheimer&nbsp;: bracelet connecté, maison intelligente et application mobile.</p>
           <p data-l="en">IoT monitoring for elderly people with Alzheimer's: smart wristband, smart home and mobile app.</p>
           <p><a class="ext" href="https://lnkd.in/dvvgj_Qr" target="_blank" rel="noopener"><span data-l="fr">Vidéo du projet (finaliste ESPRIT)</span><span data-l="en">Project video (ESPRIT finalist)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></p>
-          <div class="tags"><span class="t-blue">#iot</span><span class="t-green">#java</span><span class="t-pink">#arduino</span></div>
         </article>
       </div>
     </div>
@@ -674,8 +715,8 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   }
 
   /* ---- typewriter ---- */
-  var ROLES={fr:['Ingénieure Test & Validation','Test Automation Engineer','Python · Robot Framework','Systèmes embarqués · Aéro & Auto'],
-             en:['Test & Validation Engineer','Test Automation Engineer','Python · Robot Framework','Embedded systems · Aero & Auto']};
+  var ROLES={fr:['Ingénieure Test & Validation','Test Automation Engineer','Python · Robot Framework','Vector CANalyzer · CAPL · HIL','Systèmes embarqués · Aéro & Auto'],
+             en:['Test & Validation Engineer','Test Automation Engineer','Python · Robot Framework','Vector CANalyzer · CAPL · HIL','Embedded systems · Aero & Auto']};
   var typed=document.getElementById('typed'),ri=0,ci=0,del=false,tmr;
   function tick(){
     var list=ROLES[root.getAttribute('data-lang')||'fr'],w=list[ri%list.length];
